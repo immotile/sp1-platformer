@@ -1,25 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Quest_DoorToNextLevel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] private int levelToLoad;
      private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player")){
             if(collision.GetComponent<Quest_Player>().isQuestCompleted){
-                print("Congratz you finished the level!");
+                SceneManager.LoadScene(levelToLoad);
             }
         }
     }

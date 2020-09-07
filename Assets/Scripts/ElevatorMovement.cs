@@ -7,7 +7,7 @@ public class ElevatorMovement : MonoBehaviour
     [SerializeField] private List<GameObject> targetPoints;
     GameObject nextTarget;
     private int currentTargetPointIndex;
-    [SerializeField] float speed = 2f;
+    [SerializeField] float speed = 3f;
     // Start is called before the first frame update
     void Start()
     {

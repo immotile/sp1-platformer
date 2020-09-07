@@ -7,7 +7,7 @@ public class Quest_Giver : MonoBehaviour
 
     [SerializeField]private GameObject questGiverText;
     [SerializeField]private Text textComponent;
-    [SerializeField]private int amountToCollect = 1;
+    [SerializeField]private int amountToCollect = 8;
     [SerializeField]private string questBeginnigText;    
     [SerializeField]private string questCompletionText;
     [SerializeField]private GameObject doorToOpenWhenQuestIsCompleted;

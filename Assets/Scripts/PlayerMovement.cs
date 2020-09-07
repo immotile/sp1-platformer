@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     public GameObject groundCheck;
     public float movementSpeed = 5f;
+    private float defaultMovementSpeed;
     private float moveDirection = 0f;
     public float jumpForce = 6f;
     private bool isJumpPressed;
@@ -24,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        defaultMovementSpeed = movementSpeed;
         rigidBody2D = gameObject.GetComponent<Rigidbody2D>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         isFacingLeft = true;
@@ -98,5 +100,13 @@ public class PlayerMovement : MonoBehaviour
         } else {
             return false;
         }
+    }
+
+    public void ResetMovementSpeed(){
+        movementSpeed = defaultMovementSpeed;
+    }
+
+    public void SetNewMovementSpeed(float multiplyBy){
+        movementSpeed *= multiplyBy;
     }
 }

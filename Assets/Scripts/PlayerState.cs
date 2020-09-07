@@ -9,11 +9,19 @@ public class PlayerState : MonoBehaviour
     public int initialHealthPoints = 2;
     public int coinAmount = 0;
 
-    [SerializeField] private GameObject respawnPosition;
+    private GameObject respawnPosition;
+    [SerializeField] private GameObject startPosition;
+    [SerializeField] private bool useStartPosition;
+
     // Start is called before the first frame update
     void Start()
     {
         healthPoints = initialHealthPoints;
+        if(useStartPosition) {
+            gameObject.transform.position = startPosition.transform.position;
+        }
+        respawnPosition = startPosition;
+
     }
 
     // Update is called once per frame
