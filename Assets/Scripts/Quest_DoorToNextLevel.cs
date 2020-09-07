@@ -12,7 +12,9 @@ public class Quest_DoorToNextLevel : MonoBehaviour
     {
         if(collision.CompareTag("Player")){
             if(collision.GetComponent<Quest_Player>().isQuestCompleted){
+                GameObserver.SaveCoinsToMemory(collision.GetComponent<PlayerState>().coinAmount);
                 SceneManager.LoadScene(levelToLoad);
+
             }
         }
     }
