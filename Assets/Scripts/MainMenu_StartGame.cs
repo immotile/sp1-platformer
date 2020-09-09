@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu_StartGame : MonoBehaviour
 {
+
+    private void Start()
+    {
+        PlayerPrefs.SetInt("SelectedLevel", 1);
+    }
+
     public void StartGame(){
         PlayerPrefs.SetInt("CoinAmount", 0);
         //If no specific level has been selected, level 1 should be used
